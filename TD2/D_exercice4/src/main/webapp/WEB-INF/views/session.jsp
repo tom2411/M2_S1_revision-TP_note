@@ -10,3 +10,7 @@ Le login stocké en session est :
     Pas de login stocké en session
 </c:if>
 </div>
+
+<div>
+    Voici le nombre de fois que vous avez appellé le contrôleur : <b style="color: red">${nb}</b>
+</div>
