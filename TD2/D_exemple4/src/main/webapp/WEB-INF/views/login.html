@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Identification</title>
+</head>
+<body>
+<h1>IDENTIFICATION</h1>
+<!-- /* ce type de commentaire est interne à thymeleaf, n'apparait pas dans la page compilée */ -->
+
+<!-- /* le th:action remplace l'action par défaut. Le th:object permet de relier à l'attribut de modèle de spring mvc */-->
+<form action="#" th:action="@{/login}" th:object="${user}" method="post">
+<!-- /* Les *{ c'est pour dire que ça se rattache au th:object (puisqu'on est dans un block où le th:object est "globalement" défini) */ -->
+    <p>Login: <input type="text" th:field="*{login}" /></p>
+
+    <p>Password: <input type="password" th:field="*{password}" /></p>
+    <p><button type="submit" value="Submit" /> Envoyer</button></p>
+
+    <!-- /* la gestion des erreurs à la sauce thymeleaf */ -->
+    <div th:if="${#fields.hasErrors('global')}">
+        <p style="color: red;" th:each="err : ${#fields.errors('global')}" th:text="${err}" />
+    </div>
+</form>
+
+<!-- /* remplacement par le bloc marqué "session" de la page session.html */ -->
+<div th:replace="/session::session"></div>
+
+
+</body>
+</html>

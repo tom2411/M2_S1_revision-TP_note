@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<!-- un peu partout on a laissé des messages en français mais ils seront écrasés par le préprocess de thymeleaf -->
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{welcome}">Bienvenue</title>
+</head>
+<body>
+
+<span th:text="#{welcome}+', '+${username}">Bienvenue</span>.
+
+<form th:action="@{/logout}">
+    <button type="submit" th:text="#{button.logout}">se déconnecter</button>
+</form>
+
+<form th:action="@{/simplecheck}">
+    <button type="submit" th:text="#{misc.simplecheck}">Vérifier le login en session (en trace de serveur)</button>
+</form>
+
+<div th:replace="session::session"></div>
+
+</body>
+</html>

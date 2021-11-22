@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FIRST</title>
+</head>
+<body>
+
+<h2>Message de Service1</h2>
+<p><span th:text="${message1}"/></p>
+<h2>Message de Service1Bis</h2>
+<p><span th:text="${message1bis}"/></p>
+<h2>Message de Service2</h2>
+<p><span th:text="${message2}"/></p>
+<h2>Message de Service3 (qui agrège des traitements des services 4 et 6)</h2>
+<p><span th:text="${message3}"/></p>
+<h2>Message de Service7 (qui est identique à Service3 mais injecte au niveau du constructeur)</h2>
+<p><span th:text="${message7}"/></p>
+<h2>Message de Service5</h2>
+<p><span th:text="${message5}"/></p>
+<h2>Valeur de la ressource "motdujour"</h2>
+<p><span th:text="${message6}"/></p>
+<h2>Les ids de deux injections de service 2 (scope prototype : ce n'est pas un singleton)</h2>
+<p><span th:text="${service2Id}"/></p>
+<p><span th:text="${service2AutreId}"/></p>
+<h2>Les ids de deux injections de service 3 (scope par défaut : c'est un singleton)</h2>
+<p><span th:text="${service3Id}"/></p>
+<p><span th:text="${service3AutreId}"/></p>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{session.facts}"></title>
+</head>
+<body>
+
+<div th:fragment="session" style="display:block; border: solid thin darkblue;">
+    <!-- avec des th:if -->
+    <span th:text="#{session.storedlogin}"></span>
+    <span th:if="${courant != null}" th:text="${courant}"></span>
+    <span th:if="${courant == null}" th:text="#{session.nologin}"></span>
+
+    <br>
+    <!-- avec test directement dans texte... -->
+    <span th:text="#{session.storedlogin}"></span>
+    <span th:text="(${courant != null}? ${courant} : #{session.nologin})"/>
+
+</div>

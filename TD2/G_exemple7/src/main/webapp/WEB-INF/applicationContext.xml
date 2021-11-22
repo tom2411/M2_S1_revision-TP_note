@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+   <context:component-scan base-package="services"/>
+    <!--  <context:annotation-config/>
+    <context:spring-configured/>
+    -->
+
+    <bean id="motdujour" class="java.lang.String">
+        <constructor-arg value="Balivernes"/>
+    </bean>
+
+    <bean id="service1Impl1" class="services.Service1Impl1"/>
+    <bean name="english" id="service1Impl2" class="services.Service1Impl2"/>
+
+    <bean scope="prototype" id="service2" class="services.Service2Impl"/>
+
+    <bean id="service3" class="services.Service3">
+        <property name="service" ref="service4" />
+        <property name="conseil" ref="service6" />
+    </bean>
+
+    <bean id="service4" class="services.Service4"/>
+    <bean id="service5" class="services.Service5"/>
+    <bean id="service6" class="services.Service6"/>
+
+    <bean id="service7" class="services.Service7">
+        <constructor-arg ref="service4" />
+        <constructor-arg ref="service6" />
+    </bean>
+
+</beans>

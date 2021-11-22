@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>td2</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>A_exemple1</module>
+        <module>B_exemple2</module>
+        <module>C_exemple3</module>
+        <module>D_exemple4</module>
+        <module>E_exemple5</module>
+        <module>F_exemple6</module>
+        <module>G_exemple7</module>
+        <module>H_exemple8</module>
+        <module>I_exemple9</module>
+        <module>J_exemple10</module>
+        <module>A_exercice1</module>
+        <module>C_exercice3</module>
+        <module>D_exercice4</module>
+        <module>E_exercice5</module>
+        <module>F_exercice6</module>
+        <module>I_exercice9</module>
+        <module>J_exercice10</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+</project>
