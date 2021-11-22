@@ -10,6 +10,7 @@
 <body>
 <h1>IDENTIFICATION</h1>
 <!-- on utilise form:form qui vient de spring mvc et on précise le modelAttribute. Sinon les messages d'erreur ne sont pas traités -->
+<%--@elvariable id="user" type="dtos.User"--%>
 <form:form method="post" action="${pageContext.request.contextPath}/login"  modelAttribute="user">
     <p><form:label path="login">login</form:label> <form:input type="text" path="login"/></p>
     <p><form:label path="password">mot de passe</form:label> <form:input type="password" path="password"/></p>

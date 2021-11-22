@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @EnableWebMvc
     @Configuration
-    @ComponentScan(basePackages = {"controllers"})
+    @ComponentScan(basePackages = {"controllers","services"})
     public class ClientWebConfig implements WebMvcConfigurer {
 
         @Override
