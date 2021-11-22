@@ -8,13 +8,34 @@ package dtos;
  */
 public class User {
     private String login;
+    private String surnom;
     private String password;
+    private String humeur;
 
     public User(){}
 
-    public User(String login, String password) {
+    public User(String login,String surnom, String password) {
         this.login = login;
+        this.surnom = surnom;
         this.password = password;
+    }
+
+
+    public String getHumeur() {
+        return humeur;
+    }
+
+    public void setHumeur(String humeur) {
+        this.humeur = humeur;
+    }
+
+
+    public String getSurnom() {
+        return surnom;
+    }
+
+    public void setSurnom(String surnom) {
+        this.surnom = surnom;
     }
 
     public String getLogin() {

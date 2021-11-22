@@ -1,17 +1,36 @@
 package services;
 
+import dtos.User;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Facade {
     private static Facade instance=null;
 
-    private Map<String,String> users;
+    private Map<String,User> users;
+    private ArrayList<String> humeurs;
 
     private Facade(){
         users=new HashMap<>();
-        users.put("alice","alice");
-        users.put("bob","bob");
+
+        User u1=new User("vivi","Miss Wednesday","alice");
+        User u2=new User("bob","Bob Dylan","bob");
+
+        users.put(u1.getLogin(),u1);
+        users.put(u2.getLogin(),u2);
+
+        humeurs=new ArrayList<>();
+
+        humeurs.add("déséspérer");
+        humeurs.add("triste");
+        humeurs.add("content");
+        humeurs.add("heureux");
+        humeurs.add("SHEESH");
+
+
+
     }
 
     public static synchronized Facade getInstance() {
@@ -22,8 +41,11 @@ public class Facade {
     }
 
     public boolean checkLP(String login,String password) {
-        String pwd=users.get(login);
-        return ((pwd!=null) && (pwd.equals(password)));
+        User user=users.get(login);
+        return ((user.getPassword()!=null) && (user.getPassword().equals(password)));
    }
 
+    public Object getHumeurs() {
+        return humeurs;
+    }
 }

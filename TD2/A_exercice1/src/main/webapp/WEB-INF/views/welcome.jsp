@@ -6,7 +6,9 @@
     <title>Bienvenue</title>
 </head>
 <body>
-Bienvenue, ${username}.
+Bienvenue, ${surnom}.
+<br>
+Vous êtes ${humeur_jour}.
 
 <form action="${pageContext.request.contextPath}/logout">
     <button type="submit">se déconnecter</button>
